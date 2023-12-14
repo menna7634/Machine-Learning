@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+
+    <body style="background-image: url('E:\ai.jpg');">
+
+ <div class="login">
+	<h1>CV Classification</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Job" placeholder="Job" required="required" />
+    <input type="text" name="Employer" placeholder="Employer" required="required" />
+		<input type="text" name="Location" placeholder="Location" required="required" />
+		<input type="text" name="Salary" placeholder="Salary" required="required" />
+		<input type="text" name="WO_CV" placeholder="WO_CV" required="required" />
+		<input type="text" name="Paid_ride_to_work" placeholder="Paid_ride_to_work" required="required" />
+		<input type="text" name="Housing" placeholder="Housing" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
